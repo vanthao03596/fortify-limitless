@@ -1,22 +1,22 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "vanthao03596/fortify-limitless",
+    "description": "Fortify-driven Laravel UI replacement",
     "keywords": [
-        ":vendor_name",
+        "vanthao03596",
         "laravel",
-        "package_slug"
+        "fortify-limitless"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/vanthao03596/fortify-limitless",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "phamthao",
+            "email": "phamthao03596@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.4|^8.0",
         "spatie/laravel-package-tools": "^1.4.3",
         "illuminate/contracts": "^8.37"
     },
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Vanthao03596\\FortifyLimitless\\": "src",
+            "Vanthao03596\\FortifyLimitless\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Vanthao03596\\FortifyLimitless\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Vanthao03596\\FortifyLimitless\\FortifyLimitlessServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "FortifyLimitless": "Vanthao03596\\FortifyLimitless\\FortifyLimitlessFacade"
             }
         }
     },

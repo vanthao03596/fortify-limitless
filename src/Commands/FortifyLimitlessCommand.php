@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Vanthao03596\FortifyLimitless\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FortifyLimitlessCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'fortify-limitless';
 
     public $description = 'My command';
 
