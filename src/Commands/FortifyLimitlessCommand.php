@@ -103,7 +103,6 @@ class FortifyLimitlessCommand extends Command
         );
     }
 
-
     protected static function updateNodePackages(callable $callback, $dev = true)
     {
         if (! file_exists(base_path('package.json'))) {
