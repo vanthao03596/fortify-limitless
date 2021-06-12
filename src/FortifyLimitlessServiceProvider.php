@@ -2,24 +2,21 @@
 
 namespace Vanthao03596\FortifyLimitless;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Vanthao03596\FortifyLimitless\Commands\FortifyLimitlessCommand;
 
-class FortifyLimitlessServiceProvider extends PackageServiceProvider
+class FortifyLimitlessServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function boot()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('fortify-limitless')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_fortify-limitless_table')
-            ->hasCommand(FortifyLimitlessCommand::class);
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../stubs/resources/assets' => base_path('resources/limitless'),
+            ], 'fortify-limitless-assets');
+
+            $this->commands([
+                FortifyLimitlessCommand::class,
+            ]);
+        }
     }
 }
