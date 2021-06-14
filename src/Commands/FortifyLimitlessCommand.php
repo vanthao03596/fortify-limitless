@@ -74,7 +74,11 @@ class FortifyLimitlessCommand extends Command
 
         // Other Views...
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/resources/views/profile', resource_path('views/profile'));
+     
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/resources/views/auth', resource_path('views/auth'));
+
+        // Single Blade Views...
+        copy(__DIR__.'/../../stubs/resources/views/dashboard.blade.php', resource_path('views/dashboard.blade.php'));
     }
 
     protected function updateRoutes()
