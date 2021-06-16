@@ -3,17 +3,17 @@
         <div class="content-wrapper">
             <div class="content-inner">
                 <div class="content d-flex justify-content-center align-items-center">
-                    <form class="login-form wmin-sm-400" method="POST" action="{{ route('login') }}">
+                    <form class="login-form wmin-sm-400" method="POST" action="{{ route('two-factor.login') }}">
                         @csrf
                         <div class="card mb-0">
                             <div class="card-body" x-data="{ recovery: false }">
                                 <div class="text-center mb-3" x-show="! recovery">
                                     <i class="icon-qrcode icon-2x text-secondary border-secondary border-3 rounded-pill p-3 mb-3 mt-1"></i>
-                                    <span class="d-block text-left text-muted">{{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}</span>
+                                    <span class="d-block text-muted text-left">{{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}</span>
                                 </div>
                                 <div class="text-center mb-3" x-show="recovery" style="display: none;">
                                     <i class="icon-qrcode icon-2x text-secondary border-secondary border-3 rounded-pill p-3 mb-3 mt-1"></i>
-                                    <span class="d-block text-left text-muted">{{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}</span>
+                                    <span class="d-block text-muted text-left">{{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}</span>
                                 </div>
 
                                 <div class="form-group form-group-feedback form-group-feedback-left" x-show="! recovery">

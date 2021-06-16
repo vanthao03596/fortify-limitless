@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 	<link href="{{ asset('icons/icomoon/styles.min.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ mix('css/default/all.css') }}" rel="stylesheet" type="text/css">
-	<script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js"></script>
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </head>
 <body>
@@ -92,11 +92,8 @@
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right">
-								<a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
-								<a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
-								<a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span class="badge badge-primary badge-pill ml-auto">58</span></a>
+								<a href="{{ route('profile.show') }}" class="dropdown-item"><i class="icon-user-plus"></i> {{ __('Profile') }}</a>
 								<div class="dropdown-divider"></div>
-								<a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
 								<form method="POST" action="{{ route('logout') }}">
 									@csrf
 									<a href="{{ route('logout') }}" class="dropdown-item"
@@ -111,18 +108,47 @@
 			</div>
 
 			<div class="page-header">
-				<div class="page-header-content d-sm-flex">
-					<div class="page-title">
-						<h4><span class="font-weight-semibold">Seed</span> - Static layout</h4>
-					</div>
+				<div class="page-header page-header-light">
 
-					<div class="my-sm-auto ml-sm-auto mb-3 mb-sm-0">
-						<button type="button" class="btn btn-primary w-100 w-sm-auto">Button</button>
+					<div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline">
+						<div class="d-flex">
+							<div class="breadcrumb">
+								<a href="{{ route('dashboard') }}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> {{ __('Dashboard') }}</a>
+								<a href="content_cards.html" class="breadcrumb-item">Content</a>
+								<span class="breadcrumb-item active">Cards</span>
+							</div>
+
+							<a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+						</div>
+
+						<div class="header-elements d-none">
+							<div class="breadcrumb justify-content-center">
+								<a href="#" class="breadcrumb-elements-item">
+									<i class="icon-comment-discussion mr-2"></i>
+									Support
+								</a>
+
+								<div class="breadcrumb-elements-item dropdown p-0">
+									<a href="#" class="breadcrumb-elements-item dropdown-toggle" data-toggle="dropdown">
+										<i class="icon-gear mr-2"></i>
+										Settings
+									</a>
+
+									<div class="dropdown-menu dropdown-menu-right">
+										<a href="#" class="dropdown-item"><i class="icon-user-lock"></i> Account security</a>
+										<a href="#" class="dropdown-item"><i class="icon-statistics"></i> Analytics</a>
+										<a href="#" class="dropdown-item"><i class="icon-accessibility"></i> Accessibility</a>
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item"><i class="icon-gear"></i> All settings</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="content pt-0">
+			<div class="content">
 
 				{{ $slot }}
 				

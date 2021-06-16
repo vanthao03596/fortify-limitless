@@ -83,10 +83,19 @@ class FortifyLimitlessCommand extends Command
 
     protected function updateRoutes()
     {
-        File::append(
-            base_path('routes/web.php'),
-            "\nRoute::view('dashboard', 'dashboard')\n\t->name('dashboard')\n\t->middleware(['auth', 'verified']);\n"
-        );
+        if (! Str::contains(file_get_contents(base_path('routes/web.php')), "'/dashboard'")) {
+            File::append(
+                base_path('routes/web.php'), 
+                "\nRoute::view('/dashboard', 'dashboard')\n\t->name('dashboard')\n\t->middleware(['auth', 'verified']);\n"
+            );
+        }
+
+        if (! Str::contains(file_get_contents(base_path('routes/web.php')), "'/user/profile'")) {
+            File::append(
+                base_path('routes/web.php'), 
+                "\nRoute::view('/user/profile', 'profile.show')\n\t->name('profile.show')\n\t->middleware(['auth', 'verified']);\n"
+            );
+        }
 
         File::put(
             resource_path('views/welcome.blade.php'),

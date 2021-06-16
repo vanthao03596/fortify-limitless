@@ -22,4 +22,5 @@ mix.js('resources/limitless/js/app.js', 'public/js')
       ],
     })
    .extract()
+   .version()
    .sourceMaps();

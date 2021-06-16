@@ -47,15 +47,18 @@
                                         <i class="icon-lock2 text-muted"></i>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <div class="d-flex justify-content-end align-items-baseline">
-                                        <a class="mr-3 text-decoration-none" href="{{ route('login') }}">
-                                            {{ __('Already registered?') }}
-                                        </a>
-                
-                                        <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block"><i class="icon-plus3 mr-2"></i>{{ __('Register') }}</button>
                                 </div>
+                                
+                                <div class="form-group text-center text-muted content-divider">
+									<span class="px-2">{{ __('Already registered?') }}</span>
+								</div>
+
+                                <div class="form-group">
+									<a href="{{ route('login') }}" class="btn btn-light btn-block"><i class="icon-circle-right2 mr-2"></i>{{ __('Log in') }}</a>
+								</div>
                             </div>
                         </div>
                     </form>

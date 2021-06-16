@@ -8,7 +8,8 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
+                                    <i class="icon-lock2 icon-2x text-warning border-warning border-3 rounded-pill p-3 mb-3 mt-1"></i>
+                                    <span class="d-block text-muted text-left">{{ __('This is a secure area of the application. Please confirm your password before continuing.') }}</span>
                                 </div>
                                 
                                 <div class="form-group form-group-feedback form-group-feedback-left">

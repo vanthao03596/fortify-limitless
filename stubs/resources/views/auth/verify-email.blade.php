@@ -8,7 +8,7 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    <span class="d-block text-muted">{{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}</span>
+                                    <span class="d-block text-muted text-left">{{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}</span>
                                 </div>
                                 
                                 @if (session('status') == 'verification-link-sent')

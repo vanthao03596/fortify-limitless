@@ -9,7 +9,7 @@
                             <div class="card-body">
                                 <div class="text-center mb-3">
                                     <i class="icon-spinner11 icon-2x text-warning border-warning border-3 rounded-pill p-3 mb-3 mt-1"></i>
-                                    <span class="d-block text-muted">{{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}</span>
+                                    <span class="d-block text-muted text-left">{{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}</span>
                                 </div>
                                 
                                 @if (session('status'))
