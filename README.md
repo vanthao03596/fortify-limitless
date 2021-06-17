@@ -9,7 +9,7 @@
 
 # Introduction
 
-**FortifyLimitless** is an unopinionated authentication starter, powered by [*Laravel Fortify*](https://github.com/laravel/fortify). It is completely unstyled -- on purpose -- and only includes a minimal amount of markup to get your project running quickly. This package can be used to start your project, or you can use the [*FortifyUi Preset Template*](https://github.com/zacksmash/fortify-ui-preset) which allows you to create your own preset that you can install with **FortifyUI**.
+**FortifyLimitless** is an unopinionated authentication starter, powered by [*Laravel Fortify*](https://github.com/laravel/fortify). This package can be used to start your project, or you can use the [*FortifyUi Preset Template*](https://github.com/zacksmash/fortify-ui-preset) which allows you to create your own preset that you can install with **FortifyUI**.
 
 ---
 
@@ -25,7 +25,7 @@
 <a name="installation"></a>
 ## Installation
 
-To get started, you'll need to install **FortifyLimitless** using Composer. This will install *Laravel Fortify* as well so, please make sure you **do not** have it installed, already.
+To get started, you'll need to install **FortifyLimitless** using Composer. This will install *Laravel Fortify* as well.
 
 ```bash
 composer require vanthao03596/fortify-limitless
