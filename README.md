@@ -44,7 +44,7 @@ That's it, you're all setup! For advanced setup and configuration options, keep 
 <a name="configuration"></a>
 ## Configuration
 
-Add this to your `AppServiceProvider` or `FortifyServiceProvider`, in the `boot()` method.
+Edit `FortifyUIServiceProvider`.
 
 ```php
 Fortify::loginView(function () {
