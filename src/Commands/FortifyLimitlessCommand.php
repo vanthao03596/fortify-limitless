@@ -13,7 +13,7 @@ class FortifyLimitlessCommand extends Command
     public $signature = 'fortify-limitless
                     {--composer=global : Absolute path to the Composer binary which should be used to install packages}';
 
-    public $description = 'Setup FortifyUI routes, service providers and views';
+    public $description = 'Setup FortifyLimitless routes, service providers and views';
 
     public function handle()
     {
