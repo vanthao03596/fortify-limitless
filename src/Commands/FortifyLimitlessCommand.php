@@ -18,14 +18,15 @@ class FortifyLimitlessCommand extends Command
     public function handle()
     {
         $this->requireComposerPackages('laravel/fortify:^1.7');
-
+        
+        $this->publishAssets();
+        
         // Fortify Provider...
         $this->installServiceProviderAfter('RouteServiceProvider', 'FortifyServiceProvider');
 
         // FortifyUi Provider...
         $this->installServiceProviderAfter('FortifyServiceProvider', 'FortifyUIServiceProvider');
 
-        $this->publishAssets();
 
         $this->updateRoutes();
 
