@@ -37,11 +37,19 @@ class FortifyLimitlessCommand extends Command
 
     protected function publishAssets()
     {
-        $this->callSilent('vendor:publish', ['--tag' => 'fortify-config', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'fortify-support', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'fortify-migrations', '--force' => true]);
-
-        $this->callSilent('vendor:publish', ['--tag' => 'fortify-limitless-assets', '--force' => true]);
+        // Fortity...
+        (new Process(['php', 'artisan', 'vendor:publish', '--provider=Laravel\Fortify\FortifyServiceProvider', '--force'], base_path()))
+                ->setTimeout(null)
+                ->run(function ($type, $output) {
+                    $this->output->write($output);
+                });
+        
+        // Fority limitless assets ...
+        (new Process(['php', 'artisan', 'vendor:publish', '--tag=fortify-limitless-assets', '--force'], base_path()))
+                ->setTimeout(null)
+                ->run(function ($type, $output) {
+                    $this->output->write($output);
+                });
 
         $this->updateNodePackages(function ($packages) {
             return [
